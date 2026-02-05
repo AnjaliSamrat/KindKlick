@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KindKlick Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header>
+      <h1>KindKlick</h1>
+      <p class="sub">Child-safe browsing (local-first).</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Basics</h2>
+        <label class="row">
+          <input type="checkbox" id="enabled" />
+          <span>Enable protection</span>
+        </label>
+
+        <label class="field">
+          <span>Profile</span>
+          <select id="profile">
+            <option value="kids">Kids (6–8)</option>
+            <option value="preteen">Pre-teen (9–12)</option>
+            <option value="teen">Teen (13–16)</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>SafeSearch</h2>
+        <label class="row">
+          <input type="checkbox" id="safeSearch" />
+          <span>Force Google/Bing SafeSearch</span>
+        </label>
+        <p class="hint">YouTube Restricted Mode is a stage-0 placeholder.</p>
+      </section>
+
+      <section class="card">
+        <h2>Categories (blocked)</h2>
+        <div id="categories"></div>
+      </section>
+
+      <section class="card">
+        <h2>Allow / Block lists</h2>
+        <div class="grid">
+          <label class="field">
+            <span>Always allow (one domain per line)</span>
+            <textarea id="allowList" rows="6" spellcheck="false" placeholder="wikipedia.org"></textarea>
+          </label>
+          <label class="field">
+            <span>Always block (one domain per line)</span>
+            <textarea id="blockList" rows="6" spellcheck="false" placeholder="example.com"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Parent PIN</h2>
+        <div class="grid">
+          <label class="field">
+            <span>Set / change PIN</span>
+            <input id="pin" type="password" inputmode="numeric" autocomplete="new-password" placeholder="4+ digits" />
+          </label>
+          <label class="field">
+            <span>Confirm PIN</span>
+            <input id="pin2" type="password" inputmode="numeric" autocomplete="new-password" placeholder="repeat PIN" />
+          </label>
+        </div>
+        <button id="savePin">Save PIN</button>
+        <p class="hint">Settings changes below require PIN once set.</p>
+      </section>
+
+      <section class="card">
+        <h2>Access requests</h2>
+        <div id="requests" class="list"></div>
+        <p class="hint">Approvals are stored locally on this browser.</p>
+      </section>
+
+      <section class="card">
+        <h2>Save</h2>
+        <button id="save">Save settings</button>
+        <span id="status" class="status" aria-live="polite"></span>
+      </section>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

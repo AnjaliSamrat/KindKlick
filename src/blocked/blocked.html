@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blocked — KindKlick</title>
+    <link rel="stylesheet" href="blocked.css" />
+  </head>
+  <body>
+    <main class="card" role="main">
+      <h1>Site blocked</h1>
+      <p id="reason" class="reason"></p>
+
+      <div class="meta">
+        <div><span class="k">Domain:</span> <span id="domain"></span></div>
+        <div><span class="k">Category:</span> <span id="category"></span></div>
+      </div>
+
+      <div class="actions">
+        <button id="request">Request access</button>
+        <button id="back" class="secondary">Go back</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite"></p>
+      <p class="hint">KindKlick stores requests locally on this browser.</p>
+    </main>
+
+    <script type="module" src="blocked.js"></script>
+  </body>
+</html>
